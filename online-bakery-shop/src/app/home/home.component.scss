@@ -1,0 +1,36 @@
+  .home-container {
+    display: flex;
+    padding-top: 7%;
+    column-gap: 3em;
+ 
+  }
+  
+  .image-section {
+    margin-left: 2%;
+    width: 50%;
+    height: auto;
+
+    img {
+      width:100%;
+      height: auto;
+    }
+  }
+  
+  .text-section {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    font-size: 1.2rem;
+   
+    p {
+      display: block;
+      margin: 1rem 0;
+    }
+  }
+  
+  

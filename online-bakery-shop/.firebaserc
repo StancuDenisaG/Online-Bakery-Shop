@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "online-bakery-shop-b731e": {
+      "hosting": {
+        "online-bakery-shop": [
+          "online-bakery-shop-b731e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "online-bakery-shop-b731e"
+  }
+}
