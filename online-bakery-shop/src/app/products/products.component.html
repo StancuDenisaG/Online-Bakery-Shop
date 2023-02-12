@@ -1,0 +1,7 @@
+<div class="products">
+  <ng-container *ngFor="let product of products; let i = index">
+    <app-product-card [product]="products[i]"></app-product-card>
+  </ng-container>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+  

@@ -1,0 +1,37 @@
+.form-auth form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .form-auth mat-card {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 8em;
+    background-color: antiquewhite;
+  }
+  
+  .field {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: flex;
+    column-gap: 2.5em;
+
+
+  }
+  .button{
+    display: flex;
+    column-gap: 20em;
+  }
+  .login-link {
+    color: #333;
+  }
+  .field mat-error {
+    margin-top: 1em;
+   }
+   .field mat-form-field {
+     margin-left: 10em;
+    }

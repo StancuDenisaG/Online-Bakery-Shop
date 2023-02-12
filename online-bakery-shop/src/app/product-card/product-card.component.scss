@@ -1,0 +1,23 @@
+.product-card{
+    background-color: azure;
+}
+img{
+    height: 5em;
+    width: 10em;
+}
+.product-info{
+    display: flex;
+    column-gap: 3em;
+    .description-price{
+        display:block;
+        margin-top: 2em;
+        .price{
+            position: absolute;
+            bottom: 5em;
+        }
+    }
+}
+btns{
+    display: flex;
+    column-gap: 2em;
+}

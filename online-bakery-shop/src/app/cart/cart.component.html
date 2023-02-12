@@ -1,0 +1,15 @@
+<div class="user-info">
+    <p>{{email}}</p>
+    <div class="logout">
+        <button mat-raised-button (click)="logout()" >LOGOUT</button>
+    </div>    
+</div>
+
+<div class="products">
+    <ng-container *ngFor="let product of products; let i = index">
+        <app-product-card [cartItems]="cartItems" [product]="product" [page]="page"></app-product-card>
+    </ng-container>
+</div>
+
+
+  
