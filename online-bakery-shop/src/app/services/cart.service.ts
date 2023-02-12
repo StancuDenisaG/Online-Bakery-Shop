@@ -74,5 +74,4 @@ export class CartService {
       console.error('Error removing product from cart:', error);
     }
   }
-  
-}
+}  
