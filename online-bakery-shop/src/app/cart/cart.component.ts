@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
 import { CartItem } from '../models/cart-item';
 import { Product } from '../models/product';
 import { AuthService } from '../services/auth.service';
@@ -14,15 +13,12 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit{
 
-  //cart = this._cartService.cart;
   products: Product[] = [];
   page = 'cart';
   email: string | null = localStorage.getItem('email')
   cartItems: CartItem[] = [] 
 
-  constructor( private _cartService: CartService, private _router: Router, private _authService:AuthService){
-  
-   }
+  constructor( private _cartService: CartService, private _router: Router, private _authService:AuthService){ }
 
    ngOnInit(): void {
     if (this.email) {

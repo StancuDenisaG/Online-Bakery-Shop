@@ -37,7 +37,6 @@ export class AuthService {
 
   logout(){
     this._firebaseAuth.signOut().then(() => {
-      // Sign-out successful
       localStorage.removeItem('email');
       localStorage.removeItem('password');
     }).catch((error) => {
@@ -45,12 +44,4 @@ export class AuthService {
     });
   }
 
-  // updateUser(newEmail: string, newPassword: string){
-  //   let user = this.firebaseAuth.currentUser;
-  //   if (newEmail){
-  //     this.firebaseAuth.updateCurrentUser
-
-  //   }
-    
-  // }
 }
