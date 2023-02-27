@@ -1,5 +1,6 @@
 .product-card{
-    background-color: azure;
+    background: none;
+    width: 90em;
 }
 img{
     height: 5em;
@@ -16,8 +17,4 @@ img{
             bottom: 5em;
         }
     }
-}
-btns{
-    display: flex;
-    column-gap: 2em;
 }

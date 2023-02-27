@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   isLoggedIn = false;
-  constructor( private _authService:AuthService){}
+  constructor( private _authService:AuthService, private _router: Router){}
 
   ngOnInit(): void {
     this.checkLoginStatus();
@@ -18,4 +19,13 @@ export class HeaderComponent implements OnInit {
   checkLoginStatus() {
    this.isLoggedIn = !!localStorage.getItem('email');
   }
+
+  login(){
+    this._router.navigate(['login']);
+  }
+
+  logout(){
+    this._authService.logout()
+    this._router.navigate(['home'])
+}
 }

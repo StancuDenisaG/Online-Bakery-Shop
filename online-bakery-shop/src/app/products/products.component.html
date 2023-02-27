@@ -1,7 +1,20 @@
 <div class="products">
-  <ng-container *ngFor="let product of products; let i = index">
-    <app-product-card [product]="products[i]"></app-product-card>
-  </ng-container>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="product">
+      <mat-cell *matCellDef="let product">
+        <app-product-card [product]="product"></app-product-card>
+        <div class="btns">
+        <ng-container *ngIf="isUserLoggedIn(); else loginBlock">
+          <button mat-button (click)="addToCart(product)">Add to cart</button>
+        </ng-container>
+        <ng-template #loginBlock>
+          <p>Please log in to add items to cart.</p>
+          <button mat-button (click)="redirectToLogin()">Login</button>
+        </ng-template> 
+      </div>       
+      </mat-cell>
+    </ng-container>
+    <mat-row *matRowDef="let row; columns: ['product']"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[3, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
-  

@@ -33,6 +33,8 @@ import { AuthService } from './services/auth.service';
 import { provideFirebaseApp } from '@angular/fire/app';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './token.interceptor';
 
 
 
@@ -50,6 +52,7 @@ import { getAuth } from 'firebase/auth';
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -77,16 +80,10 @@ import { getAuth } from 'firebase/auth';
 
   ],
   providers: [
-    AuthService
+    // AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-function provideFirestore(arg0: () => any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
-  throw new Error('Function not implemented.');
-}
-
-function getFirestore(): any {
-  throw new Error('Function not implemented.');
-}
 

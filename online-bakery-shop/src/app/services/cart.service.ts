@@ -74,4 +74,21 @@ export class CartService {
       console.error('Error removing product from cart:', error);
     }
   }
+
+  async updateProductQuantity(product: Product, quantity: number, email: string) {
+    try {
+      const cartDoc = await this.cartCollection.doc(email).get().toPromise();
+      const cart: Cart | undefined = cartDoc?.exists ? cartDoc.data() : undefined;
+      if (cart) {
+        const itemIndex = cart.cartItems.findIndex(i => i.product.id === product.id);
+        if (itemIndex !== -1) {
+          cart.cartItems[itemIndex].quantity = quantity;
+          await this.cartCollection.doc(email).set(cart);
+        }
+      }
+    } catch (error) {
+      console.error('Error updating product quantity:', error);
+    }
+  }
+  
 }  

@@ -47,17 +47,8 @@
                     </mat-error>
                 </ng-container>
             </div>
-
             <div class="button">
-                <button
-                  mat-raised-button
-                  color="primary"
-                  type="submit"
-                  [disabled]="!registerForm.valid"
-                >
-                  Register
-                </button>
-
+                <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.valid"> Register</button>
                 <a class="login-link" routerLink="/login">Already have an account? Login here</a>
             </div>
             </form>

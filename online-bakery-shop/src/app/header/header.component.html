@@ -1,12 +1,15 @@
 <div class="logo">
-    <img src="../../assets/pngwing.com (2).png" alt="header logo">
+  <img src="../../assets/pngwing.com (2).png" alt="header logo">
 </div>
 
 <header>
-    <nav>
-      <a routerLink="/home">Home</a>
-      <a routerLink="cart">Cart</a>
-      <a routerLink="products">Products</a>
-    </nav>
-  </header>
+  <nav>
+    <a routerLink="/home">Home</a>
+    <a routerLink="cart">Cart</a>
+    <a routerLink="products">Products</a>
+  </nav>
   
+<button class="login" mat-button *ngIf="!isLoggedIn" (click)="login()">Login</button>
+<button class="login" mat-button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+</header>
+

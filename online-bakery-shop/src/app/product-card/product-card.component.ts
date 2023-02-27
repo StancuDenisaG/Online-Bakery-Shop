@@ -22,40 +22,6 @@ export class ProductCardComponent {
 
   constructor( private _cartService: CartService, private router: Router, private _authService: AuthService){ }
 
-  addToCart( product: Product){
-    if (this.email){
-      this._cartService.addProduct(product, 1, this.email)
-      if(this.page==='cart'){
-        window.location.reload();
-
-      }
-    }
-    
-
-   
-  }
-  removeFromCart(product: Product){
-    if(this.email){
-      this._cartService.removeProduct(product, this.email)
-      if(this.page==='cart'){
-        window.location.reload();
-
-      }
-
-    }
-    
-  }
-  isUserLoggedIn(){
-    if(localStorage.getItem('email')){
-      return true
-    }
-    else return false;
-  }
-
-  redirectToLogin(){
-    this.router.navigate(['login']);
-
-  }
   getQuantity(product: Product): number {
     let quantity = 1;
     if (this.cartItems) {
